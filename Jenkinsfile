@@ -10,7 +10,7 @@ node {
    }
 
    stage("Build ${env.BRANCH_NAME}") {
-      echo "${BAR}"
+      echo "${params.BAR}"
       sh "make clean && make all"
       archiveArtifacts artifacts: 'foo', fingerprint: true
    }
